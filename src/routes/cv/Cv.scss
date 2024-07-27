@@ -1,0 +1,44 @@
+#cv {
+    @apply leading-[1.25] text-[10pt] bg-white text-black 
+    shadow-2xl border border-gray-200 m-auto w-[210mm] min-h-[297mm] h-auto
+    flex flex-col
+    ;
+}
+
+#cv h1 {
+    @apply text-[28pt] font-semibold text-black;
+}
+
+#cv h2 {
+    @apply text-[16pt] font-semibold text-black;
+}
+
+#cv h3 {
+    @apply text-[13pt] font-semibold text-black;
+}
+
+@media print {
+    :root {
+        color-scheme: light dark;
+    }
+
+    html,
+    body {
+        @apply p-0 m-0;
+    }
+
+    #cv {
+        @apply border-0 shadow-none m-auto;
+    }
+
+    button,
+    nav {
+        @apply hidden;
+    }
+}
+
+@page {
+    size: 210mm 297mm;
+    margin: 0;
+    border: 0;
+}

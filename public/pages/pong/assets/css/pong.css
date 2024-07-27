@@ -1,0 +1,125 @@
+/* Font Awesome 4.7 läuft über die Creative Commones Lizensen und ist für private als auch kommmenzielle Zwecke, auch ohne Angabe, frei zu nutzen. */
+@import url("imports/font-awesome.css");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#pong {
+    width: 100%;
+    height: 100vh;
+    background: #000 url("../img/background-1.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+#pong #pong-playground {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+    cursor: default;
+
+}
+
+#pong #pong-playground #racket {
+    width: 200px;
+    height: 25px;
+    background: #fff;
+    border-radius: 40px;
+}
+
+#pong #pong-playground #racket .arrow {
+    position: relative;
+    color: #fff;
+}
+
+#pong #pong-playground.startState #racket .arrow:before {
+    content: "\f176";
+    font-family: FontAwesome;
+    font-size: 30px;
+    font-weight: bolder;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -220%);
+}
+
+#pong #pong-playground #ball {
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border-radius: 40px;
+}
+
+#pong #pong-playground .brick {
+    height: 50px;
+    background: #fff;
+    position: absolute;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#pong #pong-playground #score {
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 25px;
+}
+
+#pong #pong-playground #score h2 p {
+    display: inline-block;
+    margin: 0;
+}
+
+#pong #pong-playground #score h2 p::first-letter {
+    font-size: 30px;
+}
+
+#pong #pong-playground #ball,
+#pong #pong-playground #score,
+#pong #pong-playground .brick {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    animation: fadeIn .3s ease-in;
+}
+
+#pong #pong-playground.playState #ball,
+#pong #pong-playground.playState #score,
+#pong #pong-playground.playState .brick,
+#pong #pong-playground.startState #ball,
+#pong #pong-playground.startState #score,
+#pong #pong-playground.startState .brick {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+#pong #pong-playground.pauseState #racket,
+#pong #pong-playground.pauseState #ball,
+#pong #pong-playground.pauseState .brick {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    background: #f00;
+}
+
+#pong #pong-playground.pauseState #score {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    color: #f00;
+}
